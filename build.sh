@@ -29,12 +29,17 @@ fi
 
 docker build -t $APP_NAME:$BUILD_VERSION .
 
-echo "Stopping any running container..."
-sleep 1.5
-docker stop $APP_NAME
-docker rm $APP_NAME
+## remove previously running Docker container
+echo "Stopping any previuosly running container ... Please wait..."
+sleep 2
+docker stop $APP_NAME 
 
-docker run -d -p $APP_PORT:80 $APP_NAME:$BUILD_VERSION
+echo "Running basic cleanups ..."
+sleep 2
+docker rm -f $APP_NAME
+
+echo "Running your container ... ---------------------------"
+docker run -d -p $APP_PORT:80 --name $APP_NAME $APP_NAME:$BUILD_VERSION 
 
 # then
 #     echo "image build successful"
