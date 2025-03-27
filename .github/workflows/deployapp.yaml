@@ -27,5 +27,4 @@ jobs:
 
       - name: "push to docker hub"
         run: |
-          docker tag myapp ${{ secrets.DOCKERHUB_USERNAME }}/myapp
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp
