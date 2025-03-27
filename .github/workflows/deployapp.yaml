@@ -21,4 +21,11 @@ jobs:
           echo "Building docker image..."
           docker build -t myapp .
 
+      - name: "login to dockerhub"
+        run: |
+          echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
+      # - name: "push to docker hub"
+      #   run: |
+      #     docker tag myapp ${{ secrets.DOCKERHUB_USERNAME }}/myapp
+      #     docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp
