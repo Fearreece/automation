@@ -7,6 +7,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: "greetings!"
+        run: echo "Welcome"
       - name: Checkout the repository
         uses: actions/checkout@v2
       - name: Deploy the application
