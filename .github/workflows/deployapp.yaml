@@ -1,0 +1,16 @@
+name: Deploy a simple application
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Deploy the application
+        run: |
+          echo "Deploying the application..."
+          echo "Deployed the application successfully!"
+

@@ -18,12 +18,12 @@ else
     ##write to the file
     echo "Writing to the Dockerfile..."
     sleep 2
-    echo "FROM nginx:1-alpine-slim" >> $DockerFileName
+    echo "FROM nginx:alpine" >> $DockerFileName
     echo "COPY . /usr/share/nginx/html" >> $DockerFileName
     echo "WORKDIR /usr/share/nginx/html" >> $DockerFileName
-    echo "RUN addgroup -S appgroup && adduser -S appuser -G appgroup" >> $DockerFileName
-    echo "RUN chown -R appuser:appgroup /usr/share/nginx/html" >> $DockerFileName
-    echo "USER appuser" >> $DockerFileName
+    # echo "RUN addgroup -S appgroup && adduser -S appuser -G appgroup" >> $DockerFileName
+    # echo "RUN chown -R appuser:appgroup /usr/share/nginx/html" >> $DockerFileName
+    # echo "USER appuser" >> $DockerFileName
     echo "EXPOSE 80" >> $DockerFileName
     echo "Building image...."
     
