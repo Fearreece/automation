@@ -19,7 +19,7 @@ jobs:
       - name: "Build docker image"
         run: |
           echo "Building docker image..."
-          docker tag myapp ${{ secrets.DOCKERHUB_USERNAME }}/myapp .
+          docker tag -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp .
 
       - name: "login to dockerhub"
         run: |
