@@ -15,4 +15,9 @@ jobs:
         run: |
           echo "Deploying the application..."
           echo "Deployed the application successfully!"
+      
+      - name: "Build docker image"
+        run: echo "Building docker image..."
+        run: docker build -t myapp:latest .
+
 
