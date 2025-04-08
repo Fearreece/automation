@@ -28,5 +28,5 @@ jobs:
       - name: "push to docker hub"
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp
-
-        runs-on: self-hosted
+    
+    runs-on: [self-hosted, linux, x64] 
