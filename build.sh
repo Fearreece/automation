@@ -33,7 +33,7 @@ docker build -t $APP_NAME:$BUILD_VERSION .
 
 # docker build --provenance=true --sbom=true -t $APP_NAME:$BUILD_VERSION .
 
-docker build --attest type=provenance,mode=max -t $APP_NAME:$BUILD_VERSION .
+# docker build --attest type=provenance,mode=max -t $APP_NAME:$BUILD_VERSION .
 
 ## remove previously running Docker container
 echo "Stopping any previuosly running container ... Please wait..."
